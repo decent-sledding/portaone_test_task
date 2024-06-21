@@ -58,7 +58,7 @@ def handle_calculations(filename) -> MathResults:
     nmax = None
     nmin = None
     nsum = 0
-    linecount = 1
+    linecount = 0
 
     largest_inc_seq = []
     largest_dec_seq = []
@@ -70,6 +70,9 @@ def handle_calculations(filename) -> MathResults:
     with BufferedReader(filename, lambda x: int(x)) as reader:
         l = next(reader)
         nmax = nmin
+        linecount = 1
+        nsum = int(l)
+
         largest_inc_seq = current_inc_seq = [l]
         largest_dec_seq = current_dec_seq = [l]
 
